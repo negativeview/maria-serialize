@@ -1,0 +1,22 @@
+{
+  "name": "maria-serialize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negativeview/maria-serialize.git"
+  },
+  "author": "Daniel Grace",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/negativeview/maria-serialize/issues"
+  },
+  "homepage": "https://github.com/negativeview/maria-serialize#readme",
+  "dependencies": {
+    "lex": "^1.7.9"
+  }
+}
