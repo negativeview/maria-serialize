@@ -28,6 +28,7 @@ function _toString(self) {
 					if (cnt != 0) {
 						ret += ', ';
 					}
+					var key = properties[i];
 					if (typeof(self[key]) !== 'object' && self[key] === null) continue;
 					cnt++;
 					ret += "'" + key.replace(/\'/g, "\\'") + "'" + ': ';
