@@ -5,7 +5,7 @@ const vm = require('vm');
 function _toString(self) {
 	switch (typeof(self)) {
 		case 'object':
-			if ('valueOf' in self) {
+			if (self.hasOwnProperty('valueOf')) {
 				var tmp = self.valueOf();
 				return _toString(tmp);
 			}
