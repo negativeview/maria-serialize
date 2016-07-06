@@ -5,6 +5,10 @@ const vm = require('vm');
 function _toString(self) {
 	switch (typeof(self)) {
 		case 'object':
+			if ('valueOf' in self) {
+				var tmp = self.valueOf();
+				return _toString(tmp);
+			}
 			if (Object.prototype.toString.call(self) == '[object Array]') {
 				var ret = '[';
 				for (var i = 0; i < self.length; i++) {
@@ -24,8 +28,7 @@ function _toString(self) {
 					if (cnt != 0) {
 						ret += ', ';
 					}
-					var key = properties[i];
-					if (self[key] === null) continue;
+					if (typeof(self[key]) !== 'object' && self[key] === null) continue;
 					cnt++;
 					ret += "'" + key.replace(/\'/g, "\\'") + "'" + ': ';
 					ret += _toString(self[key]);
