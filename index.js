@@ -5,14 +5,11 @@ const vm = require('vm');
 function _toString(self) {
 	switch (typeof(self)) {
 		case 'object':
-			console.log('typeof', typeof(self));
 			if (self.hasOwnProperty('valueOf')) {
-				console.log('aa');
 				var tmp = self.valueOf();
 				return _toString(tmp);
 			}
 			if (Object.prototype.toString.call(self) == '[object Array]') {
-				console.log('bb');
 				var ret = '[';
 				for (var i = 0; i < self.length; i++) {
 					if (i != 0) {
@@ -23,7 +20,6 @@ function _toString(self) {
 				ret += ']';
 				return ret;
 			} else {
-				console.log('cc');
 				var ret = '{';
 
 				var properties = Object.keys(self);
