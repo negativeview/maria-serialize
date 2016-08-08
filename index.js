@@ -32,7 +32,6 @@ function _toString(self) {
 					}
 					var key = properties[i];
 					if (self[key] === null) continue;
-					console.log('key', key);
 					cnt++;
 					ret += "'" + key.replace(/\'/g, "\\'") + "'" + ': ';
 					ret += _toString(self[key]);
