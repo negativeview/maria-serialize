@@ -3,6 +3,8 @@ const util = require('util');
 const vm = require('vm');
 
 function _toString(self) {
+	if (!self) return null;
+
 	switch (typeof(self)) {
 		case 'object':
 			if (self.hasOwnProperty('valueOf')) {
